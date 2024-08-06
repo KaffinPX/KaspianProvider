@@ -31,7 +31,7 @@ function Component () {
         </button>
       ))}
     </div>
-  );
+  )
 }
 ```
 
@@ -50,6 +50,6 @@ function Example() {
         invoke('transact', [[ "kaspa:qz8xga8pme5vwhevpgp3d83ecrr7gh8rmn7hf54clmthp7ewwuufzsrzqhpq0", "10" ]])
       }}>Buy me a coffee!</button>
     </div>
-  );
+  )
 }
 ```
