@@ -20,7 +20,7 @@ function App ({ children }) {
 ```tsx
 import { useKaspian } from 'KProvider'
 
-function Component () {
+function Connection () {
   const { providers, connect } = useKaspian()
 
   return (
@@ -40,7 +40,7 @@ function Component () {
 ```tsx
 import { useKaspian } from 'KProvider'
 
-function Example() {
+function MainPage () {
   const { account, invoke } = useKaspian()
 
   return (
