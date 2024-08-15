@@ -46,6 +46,12 @@ export function KaspianProvider ({ children }: {
       } else {
         resolve(kaspianEvent.data)
       }
+
+      messagesRef.current.delete(kaspianEvent.id)
+    })
+
+    window.addEventListener('kaspa:disconnect', () => {
+      setAccount(undefined)
     })
 
     window.dispatchEvent(new CustomEvent("kaspa:requestProviders"))
