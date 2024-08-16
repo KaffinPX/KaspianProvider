@@ -6,6 +6,7 @@ export const KaspianContext = createContext<{
   connect: (id: string) => Promise<void>,
   account: AccountInfo | undefined,
   invoke: <M extends keyof RequestMappings>(method: M, params: RequestMappings[M]) => Promise<EventMappings[M]>
+  disconnect: () => Promise<void>,
 } | undefined>(undefined)
 
 export function KaspianProvider ({ children }: {
@@ -85,8 +86,16 @@ export function KaspianProvider ({ children }: {
     })
   }, [])
 
+  const disconnect = useCallback(() => {
+    return new Promise<void>((resolve) => {
+      window.addEventListener('kaspa:disconnect', () => resolve(), { once: true })
+
+      window.dispatchEvent(new CustomEvent("kaspa:disconnect"))
+    })
+  }, [])
+
   return (
-    <KaspianContext.Provider value={{ providers, connect, account, invoke }}>
+    <KaspianContext.Provider value={{ providers, connect, account, invoke, disconnect }}>
       {children}
     </KaspianContext.Provider>
   )
