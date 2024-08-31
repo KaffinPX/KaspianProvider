@@ -5,7 +5,8 @@ export interface ProviderInfo {
 
 export interface AccountInfo {
   balance: number
-  addresses: [ string[], string[] ]
+  addresses: string[]
+  networkId: string
 }
 
 export interface CustomInput {
@@ -17,6 +18,7 @@ export interface CustomInput {
 }
 
 export interface RequestMappings {
+  'account': []
   'transact': [[ string, string ][], string?, CustomInput[]?]
 }
 
