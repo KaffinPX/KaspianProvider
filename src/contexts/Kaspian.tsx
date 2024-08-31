@@ -42,10 +42,10 @@ export function KaspianProvider ({ children }: {
 
       const [ resolve, reject ] = request
 
-      if (kaspianEvent.error) {
-        reject(kaspianEvent.error)
-      } else {
+      if (typeof kaspianEvent.error === 'undefined') {
         resolve(kaspianEvent.data)
+      } else {
+        reject(kaspianEvent.error)
       }
 
       messagesRef.current.delete(kaspianEvent.id)
