@@ -1,4 +1,4 @@
-# KProvider
+# KaspianProvider
 Kaspa wallet connector as React hook.
 
 ## Usage
@@ -8,7 +8,7 @@ Kaspa wallet connector as React hook.
 1. Wrap your application with the `KaspianProvider`.
 
 ```tsx
-import { KaspianProvider } from 'KProvider'
+import { KaspianProvider } from 'KaspianProvider'
 
 function App ({ children }) {
   return <KaspianProvider>{children}</KaspianProvider>
@@ -18,7 +18,7 @@ function App ({ children }) {
 2. Connect to a wallet.
 
 ```tsx
-import { useKaspian } from 'KProvider'
+import { useKaspian } from 'KaspianProvider'
 
 function Connection () {
   const { providers, connect } = useKaspian()
@@ -38,7 +38,7 @@ function Connection () {
 3. Once connected, you should be able to invoke actions and have access to connected account info.
 
 ```tsx
-import { useKaspian } from 'KProvider'
+import { useKaspian } from 'KaspianProvider'
 
 function MainPage () {
   const { account, invoke } = useKaspian()
