@@ -1,5 +1,5 @@
 {
-  "name": "kprovider",
+  "name": "kaspianprovider",
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
