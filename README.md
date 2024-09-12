@@ -1,9 +1,15 @@
 # KaspianProvider
-Kaspa wallet connector as React hook.
+KaspianProvider makes it easy to connect the Kaspian wallet to your React app. It provides React hooks that let you manage wallet connections, access account info, and send transactions directly from your app.
+
+## Installation
+
+```bash
+bun install KaffinPX/KaspianProvider
+```
+
+Alternatively, you can install it using any package manager with Git support(for now).
 
 ## Usage
-
-### React Hooks
 
 1. Wrap your application with the `KaspianProvider`.
 
